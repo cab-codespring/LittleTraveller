@@ -91,7 +91,19 @@ namespace LittleTraveller.Controllers
         {
  
             var item = context.GetItemBySKU(sku);
-            ViewData["SelectedSizeType"] = item.sizeType;
+            // ViewData["SizeTypes"] = new SelectList(context.SizeTypes, "sizeTypeName", "sizeTypeName",item.sizeType);
+
+           //  var selected = ((SelectList)ViewData["SizeTypes"]).Where(x => x.Value == item.sizeType).First();
+           //  selected.Selected = true;
+            //foreach (var item in ((SelectList)ViewData["SizeTypes"]).)
+            //{
+            //    if (item.Value == selectedValue)
+            //    {
+            //        item.Selected = true;
+            //        break;
+            //    }
+            //}
+
             return View(item);
         }
 
@@ -113,7 +125,7 @@ namespace LittleTraveller.Controllers
                 contextItem.size = formItem.size;
                 contextItem.styleTypeID = formItem.styleTypeID;
                 contextItem.designID = formItem.designID;
-
+                contextItem.price = formItem.price;
                 context.SubmitChanges();
 
                 return RedirectToAction("Index");

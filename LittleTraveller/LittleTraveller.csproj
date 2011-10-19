@@ -73,13 +73,19 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JavaScriptExtensions.cs" />
-    <Compile Include="Models\LittleTraveller.designer.cs">
+    <Compile Include="Models\LittleTravellerdataContext.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LittleTraveller.dbml</DependentUpon>
+      <DependentUpon>LittleTravellerdataContext.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\LittleTravellerDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Global.asax" />
@@ -129,15 +135,19 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\LittleTraveller.dbml">
+    <None Include="Models\LittleTravellerdataContext.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>LittleTraveller.designer.cs</LastGenOutput>
+      <LastGenOutput>LittleTravellerdataContext.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\LittleTraveller.dbml.layout">
-      <DependentUpon>LittleTraveller.dbml</DependentUpon>
+    <None Include="Models\LittleTravellerdataContext.dbml.layout">
+      <DependentUpon>LittleTravellerdataContext.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

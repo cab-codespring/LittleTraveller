@@ -53,7 +53,7 @@
         </div>
         <div class="editor-field">
             <%: Html.DropDownListFor(c => c.sizeType, (SelectList)ViewData["SizeTypes"], new { onChange = "createSizeList(this.value)" }) %>
-            <%: Html.ValidationMessageFor(model => model.sizeType) %>         
+            <%: Html.ValidationMessageFor(model => model.sizeType) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.size) %>
@@ -66,15 +66,22 @@
             <%: Html.LabelFor(model => model.styleTypeID) %>
         </div>
         <div class="editor-field">
-           <%= Html.DropDownListFor(model => model.styleTypeID, (SelectList)ViewData["StyleTypes"])%>
-               <%: Html.ValidationMessageFor(model => model.styleTypeID) %>
+            <%= Html.DropDownListFor(model => model.styleTypeID, (SelectList)ViewData["StyleTypes"])%>
+            <%: Html.ValidationMessageFor(model => model.styleTypeID) %>
         </div>
         <div class="editor-label">
             <%: Html.LabelFor(model => model.designID) %>
         </div>
         <div class="editor-field">
-           <%= Html.DropDownListFor(model => model.designID, (SelectList)ViewData["Designs"])%>
+            <%= Html.DropDownListFor(model => model.designID, (SelectList)ViewData["Designs"])%>
             <%: Html.ValidationMessageFor(model => model.designID) %>
+        </div>
+        <div class="editor-label">
+            <%: Html.LabelFor(model => model.price) %>
+        </div>
+        <div class="editor-field">
+            <%: Html.TextBoxFor(model => model.price, String.Format("{0:F}", Model.price)) %>
+            <%: Html.ValidationMessageFor(model => model.price) %>
         </div>
         <p>
             <input type="submit" value="Create" />

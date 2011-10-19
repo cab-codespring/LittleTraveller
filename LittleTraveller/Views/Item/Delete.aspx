@@ -38,6 +38,8 @@
         
         <div class="display-label">designID</div>
         <div class="display-field"><%: Model.designID %></div>
+        <div class="display-label">price</div>
+        <div class="display-field"><%: Model.price %></div>
         
     </fieldset>
     <% using (Html.BeginForm()) { %>

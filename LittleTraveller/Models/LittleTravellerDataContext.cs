@@ -2,6 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+namespace LittleTraveller
+{
+    partial class DataClasses1DataContext
+    {
+    }
+}
 
 namespace LittleTraveller.Models
 {

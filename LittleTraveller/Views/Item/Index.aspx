@@ -1,16 +1,15 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Views/Shared/Site.Master" Inherits="System.Web.Mvc.ViewPage<IEnumerable<LittleTraveller.Models.Item>>" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="TitleContent" runat="server">
-	Index
+    Index
 </asp:Content>
-
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-
-    <h2>Index</h2>
-
+    <h2>
+        Index</h2>
     <table>
         <tr>
-            <th></th>
+            <th>
+            </th>
             <th>
                 sku
             </th>
@@ -38,14 +37,16 @@
             <th>
                 designID
             </th>
+            <th>
+                price
+            </th>
         </tr>
-
-    <% foreach (var item in Model) { %>
-    
+        <% foreach (var item in Model)
+           { %>
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { sku=item.sku }) %> 
-                <%: Html.ActionLink("Details", "Details", new { sku=item.sku })%> 
+                <%: Html.ActionLink("Edit", "Edit", new { sku=item.sku }) %>
+                <%: Html.ActionLink("Details", "Details", new { sku=item.sku })%>
                 <%: Html.ActionLink("Delete", "Delete", new { sku=item.sku })%>
             </td>
             <td>
@@ -75,15 +76,13 @@
             <td>
                 <%: item.designID %>
             </td>
+            <td>
+                <%: String.Format("{0:F}", item.price) %>
+            </td>
         </tr>
-    
-    <% } %>
-
+        <% } %>
     </table>
-
     <p>
         <%: Html.ActionLink("Create New", "Create") %>
     </p>
-
 </asp:Content>
-
