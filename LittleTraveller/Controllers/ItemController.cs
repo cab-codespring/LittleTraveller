@@ -24,8 +24,7 @@ namespace LittleTraveller.Controllers
             ViewData["Sizes"] = new SelectList(context.Sizes.Select(s => s.SizeVal));
             ViewData["StyleTypes"] = new SelectList(context.StyleTypes, "ID", "Desc");
             ViewData["Designs"] = new SelectList(context.Designs, "ID", "Desc");
-            ViewData["CascadedSizes"] = new SelectList(context.Sizes, "SizeVal", "SizeVal");
-        }
+         }
 
         [HttpGet]
         public ActionResult GetSizeList(string sizeTypeName)
@@ -39,8 +38,7 @@ namespace LittleTraveller.Controllers
                                       Value = sc.SizeVal
                                   };
 
-            ViewData["CascadedSizes"] = new SelectList(sizeCollections);
-            return Json(sizeCollections, JsonRequestBehavior.AllowGet);
+             return Json(sizeCollections, JsonRequestBehavior.AllowGet);
         }
 
         //
