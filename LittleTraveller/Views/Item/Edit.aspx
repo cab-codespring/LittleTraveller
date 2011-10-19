@@ -12,87 +12,87 @@
     <fieldset>
         <legend>Fields</legend>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.sku) %>
+            <%: Html.LabelFor(model => model.Sku) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.sku) %>
-            <%: Html.ValidationMessageFor(model => model.sku) %>
+            <%: Html.TextBoxFor(model => model.Sku) %>
+            <%: Html.ValidationMessageFor(model => model.Sku) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.seasonID) %>
+            <%: Html.LabelFor(model => model.SeasonID) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownListFor(c => c.seasonID, (SelectList)ViewData["seasons"]) %>
-            <%: Html.ValidationMessageFor(model => model.seasonID) %>
+            <%: Html.DropDownListFor(c => c.SeasonID, (SelectList)ViewData["Seasons"]) %>
+            <%: Html.ValidationMessageFor(model => model.SeasonID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.colorID) %>
+            <%: Html.LabelFor(model => model.ColorID) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownListFor(c => c.colorID, (SelectList)ViewData["colors"]) %>
-            <%: Html.ValidationMessageFor(model => model.colorID) %>
+            <%: Html.DropDownListFor(c => c.ColorID, (SelectList)ViewData["Colors"]) %>
+            <%: Html.ValidationMessageFor(model => model.ColorID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.color2ID) %>
+            <%: Html.LabelFor(model => model.Color2ID) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownListFor(c => c.color2ID, (SelectList)ViewData["colors"]) %>
-            <%: Html.ValidationMessageFor(model => model.color2ID) %>
+            <%: Html.DropDownListFor(c => c.Color2ID, (SelectList)ViewData["Colors"]) %>
+            <%: Html.ValidationMessageFor(model => model.Color2ID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.color3ID) %>
+            <%: Html.LabelFor(model => model.Color3ID) %>
         </div>
         <div class="editor-field">
-            <%: Html.DropDownListFor(c => c.color3ID, (SelectList)ViewData["colors"]) %>
-            <%: Html.ValidationMessageFor(model => model.color3ID) %>
+            <%: Html.DropDownListFor(c => c.Color3ID, (SelectList)ViewData["Colors"]) %>
+            <%: Html.ValidationMessageFor(model => model.Color3ID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.sizeType) %>
+            <%: Html.LabelFor(model => model.SizeType) %>
         </div>
  <%--       <div class="editor-label">
-            <%: Html.TextBoxFor(model => model.sizeType, new { @readonly = "readonly" })%>
+            <%: Html.TextBoxFor(model => model.SizeType, new { @readonly = "readonly" })%>
         </div>
 --%>    
-         <%-- bug: not generating default sizeType --%>
+         <%-- bug: not generating default SizeType --%>
         <div class="editor-field">
-            <%: Html.DropDownListFor(c => c.sizeType, (SelectList)ViewData["SizeTypes"], new { onChange = "createSizeList(this.value)" }) %>
-            <%: Html.ValidationMessageFor(model => model.sizeType) %>
+            <%: Html.DropDownListFor(c => c.SizeType, (SelectList)ViewData["SizeTypes"], new { onChange = "createSizeList(this.value)" }) %>
+            <%: Html.ValidationMessageFor(model => model.SizeType) %>
         </div>
 
 
-        <%--  here for bug : not generating default sizeType --%>
+        <%--  here for bug : not generating default SizeType --%>
         <div class="editor-label">
-             <%: Html.Label((string) "SizeType in DB is " + Model.sizeType)%> 
+             <%: Html.Label((string) "SizeType in DB is " + Model.SizeType)%> 
         </div>
 
 
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.size) %>
+            <%: Html.LabelFor(model => model.Size) %>
         </div>
         <div class="editor-field">
-            <%= Html.DropDownListFor(model => model.size, (SelectList)ViewData["Sizes"])%>
-            <%: Html.ValidationMessageFor(model => model.size) %>
+            <%= Html.DropDownListFor(model => model.Size, (SelectList)ViewData["Sizes"])%>
+            <%: Html.ValidationMessageFor(model => model.Size) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.styleTypeID) %>
+            <%: Html.LabelFor(model => model.StyleTypeID) %>
         </div>
         <div class="editor-field">
-            <%= Html.DropDownListFor(model => model.styleTypeID, (SelectList)ViewData["StyleTypes"])%>
-            <%: Html.ValidationMessageFor(model => model.styleTypeID) %>
+            <%= Html.DropDownListFor(model => model.StyleTypeID, (SelectList)ViewData["StyleTypes"])%>
+            <%: Html.ValidationMessageFor(model => model.StyleTypeID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.designID) %>
+            <%: Html.LabelFor(model => model.DesignID) %>
         </div>
         <div class="editor-field">
-            <%= Html.DropDownListFor(model => model.designID, (SelectList)ViewData["Designs"])%>
-            <%: Html.ValidationMessageFor(model => model.designID) %>
+            <%= Html.DropDownListFor(model => model.DesignID, (SelectList)ViewData["Designs"])%>
+            <%: Html.ValidationMessageFor(model => model.DesignID) %>
         </div>
         <div class="editor-label">
-            <%: Html.LabelFor(model => model.price) %>
+            <%: Html.LabelFor(model => model.Price) %>
         </div>
         <div class="editor-field">
-            <%: Html.TextBoxFor(model => model.price, String.Format("{0:F}", Model.price)) %>
-            <%: Html.ValidationMessageFor(model => model.price) %>
+            <%: Html.TextBoxFor(model => model.Price, String.Format("{0:F}", Model.Price)) %>
+            <%: Html.ValidationMessageFor(model => model.Price) %>
         </div>
         <p>
             <input type="submit" value="Save" />

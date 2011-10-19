@@ -11,17 +11,20 @@ namespace LittleTraveller.Controllers
     public class ItemController : Controller
     {
         LittleTravellerDataContext context;
+
+
         public ItemController()
         {
             context = new LittleTravellerDataContext();
             Console.SetOut(new DebugTextWriter());
             context.Log = Console.Out;
-            ViewData["colors"] = new SelectList(context.Colors, "colorCode", "colorCode");
-            ViewData["seasons"] = new SelectList(context.Seasons, "seasonCode", "seasonCode");
-            ViewData["SizeTypes"] = new SelectList(context.SizeTypes, "sizeTypeName", "sizeTypeName");
-            ViewData["Sizes"] = new SelectList(context.Sizes.Select(s => s.sizeVal));
-            ViewData["StyleTypes"] = new SelectList(context.StyleTypes, "ID", "DESC");
-            ViewData["Designs"] = new SelectList(context.Designs, "ID", "desc");
+            ViewData["Colors"] = new SelectList(context.Colors, "ColorCode", "ColorCode");
+            ViewData["Seasons"] = new SelectList(context.Seasons, "SeasonCode", "SeasonCode");
+            ViewData["SizeTypes"] = new SelectList(context.SizeTypes, "SizeTypeName", "SizeTypeName");
+            ViewData["Sizes"] = new SelectList(context.Sizes.Select(s => s.SizeVal));
+            ViewData["StyleTypes"] = new SelectList(context.StyleTypes, "ID", "Desc");
+            ViewData["Designs"] = new SelectList(context.Designs, "ID", "Desc");
+            ViewData["CascadedSizes"] = new SelectList(context.Sizes, "SizeVal", "SizeVal");
         }
 
         [HttpGet]
@@ -29,14 +32,14 @@ namespace LittleTraveller.Controllers
         {
             var sizeRepos = context.Sizes;
             var sizeCollections = from sc in sizeRepos
-                                  where sc.sizeTypeName == sizeTypeName
-                                   select new SelectListItem
-                                   {
-                                       Text =  sc.sizeVal,
-                                       Value = sc.sizeVal
-                                   };
+                                  where sc.SizeTypeName == sizeTypeName
+                                  select new SelectListItem
+                                  {
+                                      Text = sc.SizeVal,
+                                      Value = sc.SizeVal
+                                  };
 
-
+            ViewData["CascadedSizes"] = new SelectList(sizeCollections);
             return Json(sizeCollections, JsonRequestBehavior.AllowGet);
         }
 
@@ -51,9 +54,9 @@ namespace LittleTraveller.Controllers
         //
         // GET: /Item/Details/5
 
-        public ActionResult Details(string sku)
+        public ActionResult Details(string Sku)
         {
-            var item = context.GetItemBySKU(sku);
+            var item = context.GetItemBySKU(Sku);
             return View(item);
         }
 
@@ -63,7 +66,7 @@ namespace LittleTraveller.Controllers
         public ActionResult Create()
         {
             return View(new Item());
-        } 
+        }
 
         //
         // POST: /Item/Create
@@ -83,23 +86,23 @@ namespace LittleTraveller.Controllers
                 return View();
             }
         }
-        
+
         //
         // GET: /Item/Edit/5
- 
-        public ActionResult Edit(string sku)
-        {
- 
-            var item = context.GetItemBySKU(sku);
-            // ViewData["SizeTypes"] = new SelectList(context.SizeTypes, "sizeTypeName", "sizeTypeName",item.sizeType);
 
-           //  var selected = ((SelectList)ViewData["SizeTypes"]).Where(x => x.Value == item.sizeType).First();
-           //  selected.Selected = true;
-            //foreach (var item in ((SelectList)ViewData["SizeTypes"]).)
+        public ActionResult Edit(string Sku)
+        {
+
+            var item = context.GetItemBySKU(Sku);
+            // ViewData["SizeTypes"] = new SelectList(context.SizeTypes, "sizeTypeName", "sizeTypeName",item.SizeType);
+
+         //   var selected = ((SelectList)ViewData["SizeTypes"]).Where(x => x.Value == item.SizeType).First();
+         //   selected.Selected = true;
+            //foreach (var x in ((SelectList)ViewData["SizeTypes"]))
             //{
-            //    if (item.Value == selectedValue)
+            //    if (x.Value == item.SizeType.TrimEnd())
             //    {
-            //        item.Selected = true;
+            //        x.Selected = true;
             //        break;
             //    }
             //}
@@ -115,17 +118,17 @@ namespace LittleTraveller.Controllers
         {
             try
             {
-                var contextItem = context.GetItemBySKU((string)formItem.sku);
-                contextItem.sku = formItem.sku;
-                contextItem.seasonID = formItem.seasonID;
-                contextItem.colorID = formItem.colorID;
-                contextItem.color2ID = formItem.color2ID;
-                contextItem.color3ID = formItem.color3ID;
-                contextItem.sizeType = formItem.sizeType;
-                contextItem.size = formItem.size;
-                contextItem.styleTypeID = formItem.styleTypeID;
-                contextItem.designID = formItem.designID;
-                contextItem.price = formItem.price;
+                var contextItem = context.GetItemBySKU((string)formItem.Sku);
+                contextItem.Sku = formItem.Sku;
+                contextItem.SeasonID = formItem.SeasonID;
+                contextItem.ColorID = formItem.ColorID;
+                contextItem.Color2ID = formItem.Color2ID;
+                contextItem.Color3ID = formItem.Color3ID;
+                contextItem.SizeType = formItem.SizeType;
+                contextItem.Size = formItem.Size;
+                contextItem.StyleTypeID = formItem.StyleTypeID;
+                contextItem.DesignID = formItem.DesignID;
+                contextItem.Price = formItem.Price;
                 context.SubmitChanges();
 
                 return RedirectToAction("Index");
@@ -139,9 +142,9 @@ namespace LittleTraveller.Controllers
         //
         // GET: /Item/Delete/5
 
-        public ActionResult Delete(string sku)
+        public ActionResult Delete(string Sku)
         {
-            var item = context.GetItemBySKU(sku);
+            var item = context.GetItemBySKU(Sku);
             return View(item);
         }
 
@@ -149,11 +152,11 @@ namespace LittleTraveller.Controllers
         // POST: /Item/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(string sku, Item formItem)
+        public ActionResult Delete(string Sku, Item formItem)
         {
             try
             {
-                var item = context.GetItemBySKU(sku);
+                var item = context.GetItemBySKU(Sku);
                 context.Items.DeleteOnSubmit(item);
                 context.SubmitChanges();
                 return RedirectToAction("Index");

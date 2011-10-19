@@ -17,7 +17,7 @@ namespace LittleTraveller.Controllers
             context = new LittleTravellerDataContext();
             Console.SetOut(new DebugTextWriter());
             context.Log = Console.Out;
-            ViewData["states"] = new SelectList(context.states, "name", "name");
+            ViewData["states"] = new SelectList(context.states, "Name", "Name");
 
         }
 

@@ -73,10 +73,10 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Helpers\JavaScriptExtensions.cs" />
-    <Compile Include="Models\LittleTravellerdataContext.designer.cs">
+    <Compile Include="Models\LittleTraveller.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>LittleTravellerdataContext.dbml</DependentUpon>
+      <DependentUpon>LittleTraveller.dbml</DependentUpon>
     </Compile>
     <Compile Include="Models\LittleTravellerDataContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -135,9 +135,9 @@
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\LittleTravellerdataContext.dbml">
+    <None Include="Models\LittleTraveller.dbml">
       <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>LittleTravellerdataContext.designer.cs</LastGenOutput>
+      <LastGenOutput>LittleTraveller.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </None>
     <None Include="Properties\Settings.settings">
@@ -146,8 +146,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Models\LittleTravellerdataContext.dbml.layout">
-      <DependentUpon>LittleTravellerdataContext.dbml</DependentUpon>
+    <None Include="Models\LittleTraveller.dbml.layout">
+      <DependentUpon>LittleTraveller.dbml</DependentUpon>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

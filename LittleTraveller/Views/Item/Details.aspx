@@ -9,48 +9,48 @@
     <fieldset>
         <legend>Fields</legend>
         <div class="display-label">
-            sku</div>
+            Sku</div>
         <div class="display-field">
-            <%: Model.sku %></div>
+            <%: Model.Sku %></div>
         <div class="display-label">
-            seasonID</div>
+            SeasonID</div>
         <div class="display-field">
-            <%: Model.seasonID %></div>
+            <%: Model.SeasonID %></div>
         <div class="display-label">
-            colorID</div>
+            ColorID</div>
         <div class="display-field">
-            <%: Model.colorID %></div>
+            <%: Model.ColorID %></div>
         <div class="display-label">
-            color2ID</div>
+            Color2ID</div>
         <div class="display-field">
-            <%: Model.color2ID %></div>
+            <%: Model.Color2ID %></div>
         <div class="display-label">
-            color3ID</div>
+            Color3ID</div>
         <div class="display-field">
-            <%: Model.color3ID %></div>
+            <%: Model.Color3ID %></div>
         <div class="display-label">
-            sizeType</div>
+            SizeType</div>
         <div class="display-field">
-            <%: Model.sizeType %></div>
+            <%: Model.SizeType %></div>
         <div class="display-label">
             size</div>
         <div class="display-field">
-            <%: Model.size %></div>
+            <%: Model.Size %></div>
         <div class="display-label">
             styleTypeID</div>
         <div class="display-field">
-            <%: Model.styleTypeID %></div>
+            <%: Model.StyleTypeID %></div>
         <div class="display-label">
             designID</div>
         <div class="display-field">
-            <%: Model.designID %></div>
+            <%: Model.DesignID %></div>
         <div class="display-label">
             price</div>
         <div class="display-field">
-            <%: String.Format("{0:F}", Model.price) %></div>
+            <%: String.Format("{0:F}", Model.Price) %></div>
     </fieldset>
     <p>
-        <%: Html.ActionLink("Edit", "Edit", new { id=Model.sku }) %>
+        <%: Html.ActionLink("Edit", "Edit", new { id=Model.Sku }) %>
         |
         <%: Html.ActionLink("Back to List", "Index") %>
     </p>

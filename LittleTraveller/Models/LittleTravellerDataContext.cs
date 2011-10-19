@@ -2,19 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-namespace LittleTraveller
-{
-    partial class DataClasses1DataContext
-    {
-    }
-}
+
 
 namespace LittleTraveller.Models
 {
 
     public partial class LittleTravellerDataContext
     {
-        
+
         public List<Customer> GetCustomers()
         {
             return Customers.ToList();
@@ -31,11 +26,11 @@ namespace LittleTraveller.Models
 
         public Item GetItemBySKU(string SKU)
         {
-            return Items.SingleOrDefault(c => c.sku == SKU);
+            return Items.SingleOrDefault(c => c.Sku == SKU);
         }
 
- 
- 
+
+
     }
 
 }

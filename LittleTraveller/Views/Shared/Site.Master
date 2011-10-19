@@ -15,14 +15,14 @@
         {
             /*@cc_on@*/
 
-            $.getJSON('<%= ResolveUrl("~/Item/GetSizeList/")%>', { sizeTypeName: sizeTypeSelected }, function (data)
+            $.getJSON('<%= ResolveUrl("~/Item/GetSizeList/")%>', { SizeTypeName: sizeTypeSelected }, function (data)
             {
                 sizeCollection = data;
                 var items = ""; $.each(data, function (i, sizeCollection)
                 {
                     items += "<option value='" + sizeCollection.Value + "'>" + sizeCollection.Text + "</option>";
                 });
-                $("#size").html(items);
+                $("#Size").html(items);
             });
 
 

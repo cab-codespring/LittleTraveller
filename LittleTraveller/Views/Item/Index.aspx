@@ -11,73 +11,73 @@
             <th>
             </th>
             <th>
-                sku
+                Sku
             </th>
             <th>
-                seasonID
+                SeasonID
             </th>
             <th>
-                colorID
+                ColorID
             </th>
             <th>
-                color2ID
+                Color2ID
             </th>
             <th>
-                color3ID
+                Color3ID
             </th>
             <th>
-                sizeType
+                SizeType
             </th>
             <th>
-                size
+                Size
             </th>
             <th>
-                styleTypeID
+                StyleTypeID
             </th>
             <th>
-                designID
+                DesignID
             </th>
             <th>
-                price
+                Price
             </th>
         </tr>
         <% foreach (var item in Model)
            { %>
         <tr>
             <td>
-                <%: Html.ActionLink("Edit", "Edit", new { sku=item.sku }) %>
-                <%: Html.ActionLink("Details", "Details", new { sku=item.sku })%>
-                <%: Html.ActionLink("Delete", "Delete", new { sku=item.sku })%>
+                <%: Html.ActionLink("Edit", "Edit", new { Sku=item.Sku }) %>
+                <%: Html.ActionLink("Details", "Details", new { Sku=item.Sku })%>
+                <%: Html.ActionLink("Delete", "Delete", new { Sku=item.Sku })%>
             </td>
             <td>
-                <%: item.sku %>
+                <%: item.Sku %>
             </td>
             <td>
-                <%: item.seasonID %>
+                <%: item.SeasonID %>
             </td>
             <td>
-                <%: item.colorID %>
+                <%: item.ColorID %>
             </td>
             <td>
-                <%: item.color2ID %>
+                <%: item.Color2ID %>
             </td>
             <td>
-                <%: item.color3ID %>
+                <%: item.Color3ID %>
             </td>
             <td>
-                <%: item.sizeType %>
+                <%: item.SizeType %>
             </td>
             <td>
-                <%: item.size %>
+                <%: item.Size %>
             </td>
             <td>
-                <%: item.styleTypeID %>
+                <%: item.StyleTypeID %>
             </td>
             <td>
-                <%: item.designID %>
+                <%: item.DesignID %>
             </td>
             <td>
-                <%: String.Format("{0:F}", item.price) %>
+                <%: String.Format("{0:F}", item.Price) %>
             </td>
         </tr>
         <% } %>
