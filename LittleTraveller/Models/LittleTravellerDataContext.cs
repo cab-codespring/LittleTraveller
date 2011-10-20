@@ -29,8 +29,25 @@ namespace LittleTraveller.Models
             return Items.SingleOrDefault(c => c.Sku == SKU);
         }
 
+        public List<StyleType> GetStyleTypes()
+        {
+            return StyleTypes.ToList();
+        }
 
+        public StyleType GetStyleTypeByID(int ID)
+        {
+            return StyleTypes.SingleOrDefault(c => c.ID == ID);
+        }
 
+        public List<Design> GetDesigns()
+        {
+            return Designs.ToList();
+        }
+
+        public Design GetDesignByID(int ID)
+        {
+            return Designs.SingleOrDefault(c => c.ID == ID);
+        }
     }
 
 }

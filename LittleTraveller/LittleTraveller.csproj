@@ -65,9 +65,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\DesignController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\DebugTextWriter.cs" />
     <Compile Include="Controllers\ItemController.cs" />
+    <Compile Include="Controllers\StyleTypeController.cs" />
     <Compile Include="Controllers\TopMenuController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -95,11 +97,19 @@
     <Content Include="Views\Customer\Details.aspx" />
     <Content Include="Views\Customer\Edit.aspx" />
     <Content Include="Views\Customer\Index.aspx" />
+    <Content Include="Views\Design\Create.aspx" />
+    <Content Include="Views\Design\Delete.aspx" />
+    <Content Include="Views\Design\Edit.aspx" />
+    <Content Include="Views\Design\Index.aspx" />
     <Content Include="Views\Item\Create.aspx" />
     <Content Include="Views\Item\Delete.aspx" />
     <Content Include="Views\Item\Details.aspx" />
     <Content Include="Views\Item\Edit.aspx" />
     <Content Include="Views\Item\Index.aspx" />
+    <Content Include="Views\StyleType\Create.aspx" />
+    <Content Include="Views\StyleType\Delete.aspx" />
+    <Content Include="Views\StyleType\Edit.aspx" />
+    <Content Include="Views\StyleType\Index.aspx" />
     <Content Include="Views\TopMenu\index.aspx" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">

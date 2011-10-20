@@ -11,5 +11,13 @@
     <h2>
         <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="../../Item/">Item Maintenance</asp:HyperLink>
     </h2>
+        <h2>
+        <asp:HyperLink ID="HyperLink3" runat="server" NavigateUrl="../../StyleType/">StyleType Maintenance</asp:HyperLink>
+    </h2>
+    </h2>
+        <h2>
+        <asp:HyperLink ID="HyperLink4" runat="server" NavigateUrl="../../Design/">Design Maintenance</asp:HyperLink>
+    </h2>
+
     </form>
 </asp:Content>
